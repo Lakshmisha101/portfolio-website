@@ -475,14 +475,15 @@ footer {
 
 
 .popup__content {
-  background: var(--primary-color);
+  background: var(--primary-color); /* or #fff if you want white */
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
-  width: 100%;
-  max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;  /* Allow scroll if content is tall */
+  width: 90vw;          /* Takes 90% of screen width */
+  max-width: 400px;     /* Doesn't exceed 400px on desktop */
+  max-height: 80vh;     /* Prevents overflow on mobile */
+  overflow-y: auto;     /* Adds scroll inside popup if needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
