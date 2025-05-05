@@ -470,6 +470,9 @@ footer {
   justify-content: center;  /* Centers horizontally */
   align-items: center;      /* Centers vertically */
   display: flex;            /* Use flex to align the content */
+  overflow-y: auto; /* Enables scroll if content overflows */
+  padding: 1rem; /* Adds spacing on small screens */
+  box-sizing: border-box;
 }
 
 .popup__content {
@@ -479,6 +482,7 @@ footer {
   text-align: center;
   width: 90%;  /* Responsive width */
   max-width: 500px;  /* Maximum width for the popup */
+  box-sizing: border-box;
 }
 
 .popup__content h2 {
@@ -489,6 +493,7 @@ footer {
 .popup__content p {
   color: var(--text-light);  /* Light color for text */
   margin: 1rem 0;  /* Space around the text */
+  text-align: justify;
 }
 
 .close-btn {
@@ -504,6 +509,18 @@ footer {
 
 .close-btn:hover {
   background-color: var(--secondary-color-dark);  /* Darker shade on hover */
+}
+
+/* Responsive improvements */
+@media (max-width: 600px) {
+  .popup__content {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .popup__content h2 {
+    font-size: 1.2rem;
+  }
 }
 
 /* Popup message styles */
