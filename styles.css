@@ -458,32 +458,33 @@ footer {
 }
 /* Popup Styles */
 .popup {
-  display: none;  /* Hidden by default */
+  display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);  /* Center the popup */
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);  /* Semi-transparent background */
-  z-index: 1000;  /* Ensures the popup is on top */
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;      /* Centers vertically */
-  display: flex;            /* Use flex to align the content */
-  overflow-y: auto; /* Enables scroll if content overflows */
-  padding: 1rem; /* Adds spacing on small screens */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
+
 .popup__content {
-  background: var(--primary-color);  /* Primary color for the popup */
-  padding: 2rem;
+  background: var(--primary-color);
+  padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
-  width: 90%;  /* Responsive width */
-  max-width: 500px;  /* Maximum width for the popup */
-  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;  /* Allow scroll if content is tall */
 }
+
 
 .popup__content h2 {
   font-size: 1.5rem;
@@ -512,16 +513,16 @@ footer {
 }
 
 /* Responsive improvements */
-@media (max-width: 600px) {
-  .popup__content {
-    padding: 1.5rem 1rem;
-    font-size: 0.95rem;
+@media (max-width: 480px) {
+  .popup__content h2 {
+    font-size: 1.25rem;
   }
 
-  .popup__content h2 {
-    font-size: 1.2rem;
+  .popup__content p {
+    font-size: 0.95rem;
   }
 }
+
 
 /* Popup message styles */
 .popup-message {
